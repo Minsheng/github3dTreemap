@@ -95,19 +95,23 @@
 					"children":[
 						{
 							"name":"dhh",
-							"commits":3652	
+							"commits":3652,
+							"size":1	
 						},
 						{
 							"name":"tenderlove",
-							"commits":3554
+							"commits":3554,
+							"size":1
 						},
 						{
 							"name":"jeremy",
-							"commits":3207
+							"commits":3207,
+							"size":1
 						},
 						{
 							"name":"fxn",
-							"commits":1554
+							"commits":1554,
+							"size":1
 						}
 					]	
 				}
