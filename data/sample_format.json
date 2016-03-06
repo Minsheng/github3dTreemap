@@ -10,7 +10,6 @@
 					"stargazers_count":27229,
 					"language":"JavaScript",
 					"contributors_count": 250,
-					"commits": 6049,
 					"children":[
 						{
 							"name":"mdo",
@@ -30,7 +29,6 @@
 					"stargazers_count":26461,
 					"language":"JavaScript",
 					"contributors_count": 859,
-					"commits":13361,
 					"children":[
 						{
 							"name":"ry",
@@ -60,7 +58,6 @@
 					"stargazers_count":20881,
 					"language":"JavaScript",
 					"contributors_count": 106,
-					"commits":3518,
 					"children":[
 						{
 							"name":"mbostock",
@@ -95,7 +92,6 @@
 					"stargazers_count":29983,
 					"language":"Ruby",
 					"contributors_count": 3015,
-					"commits":57002,
 					"children":[
 						{
 							"name":"dhh",
