@@ -1,12 +1,12 @@
 import urllib2
 import json
 
-# find out the top 10 languages with projects that have over 5000 stars
+# find out the top 10 languages with projects that have over n stars
 # find out the top n projects by star counts in each languages, with 
 # {id, name, html_url, owner.type, stargazers_count, forks_count, #of contributors, # of total commits, children:[contributors]}
 # for each contributor in the children, {"name":..., "commits":..., size":1}
 
-LANGUAGES = ['javascript', 'objective-c', 'ruby', 'java', 'python', 'html', 'css', 'go', 'php', 'c%2B%2B']
+LANGUAGES = ['javascript', 'objective-c', 'ruby', 'java', 'python', 'html', 'c', 'go', 'php', 'c%2B%2B']
 TEST = ['javascript', 'ruby']
 LIMIT = 10
 PROJECT_LIMIT = 6
@@ -14,8 +14,8 @@ MASTER_LIST = {'name':'Top 10 Languages', 'children':[]}
 SEARCH_REPO_URL = 'https://api.github.com/search/repositories'
 CONTRIBUTOR_URL = 'https://api.github.com/repositories/'
 CONTRIBUTOR_POSTFIX = '/stats/contributors'
-STAR_LIMIT = 5000
-TOKEN = 'token e553789597130ee9b9e1fc19f7a93797ca0e7b63'
+STAR_LIMIT = 3000
+TOKEN = 'token ' + '' # fill out your own github token string
 
 # helper for fetching data from github server
 def fetchDataFromUrl(url, query=''):
@@ -32,16 +32,16 @@ def fetchDataFromUrl(url, query=''):
 def genContributorUrl(url, repo_id, postfix):
 	return url+str(repo_id)+postfix
 
-'''
-the script below will 
-1. iterate through the data returned from github
-2. format the data
-3. fill the master list
-4. output to a json file
-'''
+# '''
+# the script below will 
+# 1. iterate through the data returned from github
+# 2. format the data
+# 3. fill the master list
+# 4. output to a json file
+# '''
 
 for lang in LANGUAGES:
-	star = STAR_LIMIT # default limit for other languages is 5000
+	star = STAR_LIMIT
 	
 	if lang == 'javascript':
 		star = 20000 # reduce the number of records to be fetched since javascript is popular
