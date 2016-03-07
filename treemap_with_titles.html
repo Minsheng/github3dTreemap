@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <title>Treemap - Neat Zoom Effect</title>
+    <title>Treemap with Zoom Effect</title>
     <script type="text/javascript" src="./js/modernizr.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/d3.min.js"></script>
     <script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>
@@ -77,7 +77,7 @@
     /* script originally written by Bill White 
     reference: http://www.billdwhite.com/wordpress/2012/12/16/d3-treemap-with-title-headers/
     */
-    var chartWidth = 1260;
+    var chartWidth = 1680;
     var chartHeight = 650;
     var xscale = d3.scale.linear().range([0, chartWidth]);
     var yscale = d3.scale.linear().range([0, chartHeight]);
@@ -102,9 +102,11 @@
         .attr("height", chartHeight)
         .append("svg:g");
 
-    var tree_data_url = "https://raw.githubusercontent.com/Minsheng/github3dTreemap/master/data/tree_data_10.json"
-    var sample_url = "https://raw.githubusercontent.com/Minsheng/github3dTreemap/master/data/sample_format.json"
-    d3.json(tree_data_url, function(data) {
+    var full_url_10 = "https://raw.githubusercontent.com/Minsheng/github3dTreemap/master/data/tree_data_10.json";
+    var full_url_2 = "https://raw.githubusercontent.com/Minsheng/github3dTreemap/master/data/tree_data_2.json";
+    var sample_url = "https://raw.githubusercontent.com/Minsheng/github3dTreemap/master/data/sample_format.json";
+
+    d3.json(full_url_10, function(data) {
         node = root = data;
         var nodes = treemap.nodes(root);
 
@@ -260,16 +262,6 @@
 
         zoom(node);
     });
-
-
-    // function size(d) {
-    //     return d.size;
-    // }
-
-
-    // function count(d) {
-    //     return 1;
-    // }
     
     function textHeight(d) {
         var ky = chartHeight / d.dy;
@@ -302,7 +294,6 @@
             .padding([headerHeight / (chartHeight / d.dy), 0, 0, 0])
             .nodes(d);
 
-        // moving the next two lines above treemap layout messes up padding of zoom result
         var kx = chartWidth / d.dx;
         var ky = chartHeight / d.dy;
         var level = d;
