@@ -441,7 +441,7 @@ var initVisualization = function(dataSrc, dimensionStr) {
                 _boxMap         = {};
             
             _scaler.clamp(true); // enable clamping
-            var parentColorSet = ["#0C090A", "#4C4646", "#565051", "#6D6968", "#E5E4E2"];
+            var parentColorSet = ["#6D6968", "#B6B6B4", "#0C090A", "#6D6968", "#E5E4E2"];
             var root;
             var node;
 
@@ -454,7 +454,7 @@ var initVisualization = function(dataSrc, dimensionStr) {
 
                 _renderer = Modernizr.webgl ? new THREE.WebGLRenderer({antialias: false}) : new THREE.CanvasRenderer();
                 _renderer.setSize(_width, _height);
-                _renderer.setClearColor(0xFFFFFF);
+                _renderer.setClearColor(0x3D3C3A);
                 _renderer.domElement.style.position = 'absolute';
                 _renderer.shadowMap.enabled = true;
                 _renderer.shadowMapSoft = true;
@@ -633,7 +633,7 @@ var initVisualization = function(dataSrc, dimensionStr) {
 
                     // set the padding for each child
                     treemap
-                        .padding([10, 10, 10, 10])
+                        .padding([5, 5, 5, 5])
                         .nodes(node);
                         
                     render();
